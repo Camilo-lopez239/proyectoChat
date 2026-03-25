@@ -14,8 +14,8 @@ module.exports = function (io){
     io.on('connection', async socket =>{
         console.log("Nuevo usuario conectado");
 
-        let messages = await Chat.find({}).limit(8);
-        socket.emit('Cargando viejos mensajes', messages);
+        let messages = await Chat.find({}).limit(8).sort({created_at: -1});
+        socket.emit('Cargando viejos mensajes', messages.reverse());
 
         socket.on('Nuevo Usuario', (data, cb) => {
             if (data in users) {

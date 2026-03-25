@@ -11,7 +11,11 @@ app.set('port', process.env.PORT || 3000);
 
 const server = http.createServer(app);
 const io = socketio(server);
-const dbURL = process.env.MONGODB_URL || 'mongodb://127.0.0.1/chat-database'
+const dbURL = process.env.MONGODB_URL; 
+
+if (!dbURL) {
+    console.error("ERROR: La variable MONGODB_URL no está definida.");
+}
 
 mongoose.connect(dbURL)
     .then(db => console.log('Base de datos conectada'))
