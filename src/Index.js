@@ -17,7 +17,7 @@ mongoose.connect(mongoURI)
     .catch(err => console.log('Error en DB', err))
 require('./Sockets.js')(io);
 
-
+app.use(express.static(path.join(__dirname,'public')));
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'Index.html'));
 });
