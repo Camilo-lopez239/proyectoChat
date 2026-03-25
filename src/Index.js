@@ -18,7 +18,7 @@ mongoose.connect(mongoURI)
 require('./Sockets.js')(io);
 
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 server.listen(app.get('port'),'0.0.0.0', ()=>{
     console.log("Servidor en el puerto ", app.get('port'));
