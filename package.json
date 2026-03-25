@@ -1,0 +1,24 @@
+{
+  "name": "proyectochat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/Index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/Index.js",
+    "start": "node src/Index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.3.2",
+    "socket.io": "^4.8.3",
+    "sockets": "^0.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
